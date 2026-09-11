@@ -10,7 +10,7 @@ Valheim BepInEx mod for chest filter controls on nearby containers.
 | Plugin name | `Sonic Chest Filters` |
 | Plugin GUID | `com.sonicdm.valheim.sonicchestfilters` |
 | Assembly | `SonicChestFilters.dll` |
-| Version | `1.0.0` |
+| Version | `1.0.1` |
 | Config file | `BepInEx/config/com.sonicdm.valheim.sonicchestfilters.cfg` |
 
 ## Features
@@ -18,9 +18,9 @@ Valheim BepInEx mod for chest filter controls on nearby containers.
 - **Filter:** a live Jötunn Valheim-styled text box on the open chest. Occupied slots that do not match the query are hidden; empty slots stay usable for deposits. Matching uses `*` wildcards and substring search on localized names, tokens, and prefabs.
 - **Clear Filter:** shows every slot again and clears the box.
 - **Sort:** one button. Merges compatible stacks, then orders items by type, localized name, and quality. Click again to reverse. Requires chest ownership; does not sort while an item is being dragged.
-- **Find items:** console/chat commands `find` and `finditem` (Jötunn CommandManager) glow nearby eligible chests (same matching rules as the filter). Examples: `find Resin`, `find` (held item), `find clear`.
+- **Find items:** console/chat command `locate` glows nearby eligible chests (same matching rules as the filter). Examples: `locate Resin`, `locate` (held item), `locate clear`.
 
-When **Nearby Crafting Forked** is installed, this mod’s locate commands are not registered. Use NCF’s `nearby` / `locate` instead. Filter and Sort still work.
+When **Nearby Crafting Forked** is installed, this mod’s `locate` command is not registered. Use NCF’s `nearby` / `locate` instead. Filter and Sort still work.
 
 Filter is visual-only and resets when the chest is closed. Sort writes the new layout into the container inventory.
 

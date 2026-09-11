@@ -30,8 +30,7 @@ namespace SonicChestFilters
 				return;
 			}
 			_commandRegistered = true;
-			CommandManager.Instance.AddConsoleCommand(new FindCommand());
-			CommandManager.Instance.AddConsoleCommand(new FindItemCommand());
+			CommandManager.Instance.AddConsoleCommand(new LocateCommand());
 		}
 
 		internal static List<string> CommandOptions()
@@ -100,7 +99,7 @@ namespace SonicChestFilters
 			{
 				if (!TryGetHeldItemPattern(player, out pattern, out displayName))
 				{
-					Say("Hold an item or use: find <item name>", context);
+					Say("Hold an item or use: locate <item name>", context);
 					return;
 				}
 			}
@@ -109,7 +108,7 @@ namespace SonicChestFilters
 				pattern = string.Join(" ", args).Trim();
 				if (pattern.Length == 0)
 				{
-					Say("Usage: find [item|*pattern*|clear]", context);
+					Say("Usage: locate [item|*pattern*|clear]", context);
 					return;
 				}
 				displayName = pattern;
@@ -534,29 +533,12 @@ namespace SonicChestFilters
 		}
 	}
 
-	internal sealed class FindCommand : ConsoleCommand
+	internal sealed class LocateCommand : ConsoleCommand
 	{
-		public override string Name => "find";
+		public override string Name => "locate";
 
 		public override string Help =>
 			"[item|clear] Highlight nearby eligible chests containing an item (or clear). No args uses held item.";
-
-		public override void Run(string[] args, Terminal context)
-		{
-			ItemLocate.OnCommand(args, context);
-		}
-
-		public override List<string> CommandOptionList()
-		{
-			return ItemLocate.CommandOptions();
-		}
-	}
-
-	internal sealed class FindItemCommand : ConsoleCommand
-	{
-		public override string Name => "finditem";
-
-		public override string Help => "[item|clear] Alias for find — highlight chests containing an item.";
 
 		public override void Run(string[] args, Terminal context)
 		{

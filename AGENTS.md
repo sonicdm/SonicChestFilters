@@ -105,7 +105,7 @@ r2modman profile plugin folder (typical):
 
 - Chest UI uses Jötunn `GUIManager.CreateButton` / `CreateInputField` (Valheim-styled, parented to `InventoryGui.m_container`). Harmony postfixes still attach/detach on open/close. Filter focus uses `GUIManager.BlockInput`.
 - UI strings are Jötunn localization tokens (`$sonic_chestfilters_*`).
-- Item locate (`find` / `finditem`) is registered with Jötunn `CommandManager` unless `com.sonicdm.valheim.nearbycraftingforked` is in `Chainloader.PluginInfos`.
+- Item locate (`locate`) is registered with Jötunn `CommandManager` unless `com.sonicdm.valheim.nearbycraftingforked` is in `Chainloader.PluginInfos`.
 
 ## Scripts map
 

@@ -18,7 +18,7 @@ namespace SonicChestFilters
 
 		public const string PluginName = "Sonic Chest Filters";
 
-		public const string PluginVersion = "1.0.0";
+		public const string PluginVersion = "1.0.1";
 
 		internal const string NearbyCraftingForkedGuid = "com.sonicdm.valheim.nearbycraftingforked";
 
@@ -97,7 +97,7 @@ namespace SonicChestFilters
 			BalrondCompatibility = Config.Bind("Containers", "BalrondConstructions", true, "Recognize storage prefabs where Container and Piece are siblings under the same prefab root.");
 			EnableFilterBox = Config.Bind("UI", "EnableFilterBox", true, "Show a live Valheim text box on the open chest to filter visible items.");
 			EnableSortButton = Config.Bind("UI", "EnableSortButton", true, "Show a Sort button on the open chest.");
-			ItemLocateEnabled = Config.Bind("Item Locate", "Enabled", true, "Enable the 'find' / 'finditem' console commands. Ignored when Nearby Crafting Forked is loaded.");
+			ItemLocateEnabled = Config.Bind("Item Locate", "Enabled", true, "Enable the 'locate' console command. Ignored when Nearby Crafting Forked is loaded.");
 			ItemLocateMaxHighlights = Config.Bind("Item Locate", "MaxHighlights", 10, new ConfigDescription("Maximum chests to glow (nearest first).", (AcceptableValueBase)(object)new AcceptableValueRange<int>(1, 50), Array.Empty<object>()));
 			ItemLocateDurationSeconds = Config.Bind("Item Locate", "DurationSeconds", 15f, new ConfigDescription("How long chest glows last before auto-clear.", (AcceptableValueBase)(object)new AcceptableValueRange<float>(3f, 120f), Array.Empty<object>()));
 			ItemLocateGlowColor = Config.Bind("Item Locate", "GlowColor", "1,0.85,0.2", "Emission tint for highlighted chests as R,G,B in 0-1 range.");

@@ -6,9 +6,9 @@
     <NoWarn>$(NoWarn);CS8632</NoWarn>
     <AssemblyName>SonicChestFilters</AssemblyName>
     <RootNamespace>SonicChestFilters</RootNamespace>
-    <Version>1.0.0</Version>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <FileVersion>1.0.0.0</FileVersion>
+    <Version>1.0.1</Version>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <FileVersion>1.0.1.0</FileVersion>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <ValheimLibDir Condition="'$(ValheimLibDir)' == ''">E:\Scripts\Valheim Mods\Reqs</ValheimLibDir>
