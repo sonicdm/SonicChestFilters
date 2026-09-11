@@ -70,25 +70,13 @@ BepInEx/plugins/SonicDM-SonicChestFilters/
 
 ## Build (developers)
 
-Default Valheim / BepInEx reference folder:
-
-```text
-E:\Scripts\Valheim Mods\Reqs
-```
-
-Populate it from the dedicated server Managed folder and the r2modman Default profile:
-
-```text
-\\allan-pc\h\Games\Valheim Server\Docker\data\server\valheim_server_Data\Managed
-%AppData%\r2modmanPlus-local\Valheim\profiles\Default\BepInEx\core
-```
+Build against a local folder of Valheim / BepInEx managed DLLs. Pass that folder with `-LibDir` (do not commit those refs).
 
 ```powershell
-.\build.ps1
-.\build.ps1 -Package
-.\package.ps1
+.\build.ps1 -LibDir "path\to\ValheimRefs"
+.\build.ps1 -LibDir "path\to\ValheimRefs" -Package
+.\package.ps1 -LibDir "path\to\ValheimRefs"
 .\package.ps1 -SkipBuild
-.\build.ps1 -LibDir "D:\Somewhere\ValheimRefs"
 ```
 
 `package.ps1` builds a Thunderstore-compatible zip under `dist/` per [Thunderstore package docs](https://thunderstore.io/package/create/docs/):
