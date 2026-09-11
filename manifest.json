@@ -1,0 +1,11 @@
+{
+  "name": "SonicChestFilters",
+  "version_number": "1.0.0",
+  "website_url": "https://github.com/sonicdm/SonicChestFilters",
+  "description": "Filter and sort open chests, and find items in nearby containers.",
+  "author": "SonicDM",
+  "dependencies": [
+    "denikson-BepInExPack_Valheim-5.4.2333",
+    "ValheimModding-Jotunn-2.30.0"
+  ]
+}
