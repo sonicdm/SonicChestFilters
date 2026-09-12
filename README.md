@@ -10,7 +10,7 @@ Valheim BepInEx mod for chest filter controls on nearby containers.
 | Plugin name | `Sonic Chest Filters` |
 | Plugin GUID | `com.sonicdm.valheim.sonicchestfilters` |
 | Assembly | `SonicChestFilters.dll` |
-| Version | `1.0.1` |
+| Version | `1.0.2` |
 | Config file | `BepInEx/config/com.sonicdm.valheim.sonicchestfilters.cfg` |
 
 ## Features

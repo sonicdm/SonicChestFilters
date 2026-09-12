@@ -59,6 +59,10 @@ namespace SonicChestFilters
 				if (!HasQuery || !element.m_used)
 				{
 					RestoreClickable(element);
+					if (element.m_used)
+					{
+						RestoreTooltip(element);
+					}
 					continue;
 				}
 
@@ -66,6 +70,7 @@ namespace SonicChestFilters
 				if (ItemIsVisible(item))
 				{
 					RestoreClickable(element);
+					RestoreTooltip(element);
 					continue;
 				}
 
@@ -81,6 +86,14 @@ namespace SonicChestFilters
 			}
 		}
 
+		private static void RestoreTooltip(InventoryElement element)
+		{
+			if ((Object)(object)element.m_tooltip != (Object)null)
+			{
+				element.m_tooltip.enabled = true;
+			}
+		}
+
 		private static void HideOccupied(InventoryElement element)
 		{
 			SetGraphicEnabled(element.m_icon, false);
@@ -93,10 +106,6 @@ namespace SonicChestFilters
 			if ((Object)(object)element.m_durability != (Object)null)
 			{
 				element.m_durability.gameObject.SetActive(false);
-			}
-			if ((Object)(object)element.m_tooltip != (Object)null)
-			{
-				element.m_tooltip.enabled = false;
 			}
 			if ((Object)(object)element.m_button != (Object)null)
 			{

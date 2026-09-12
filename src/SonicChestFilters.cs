@@ -18,7 +18,7 @@ namespace SonicChestFilters
 
 		public const string PluginName = "Sonic Chest Filters";
 
-		public const string PluginVersion = "1.0.1";
+		public const string PluginVersion = "1.0.2";
 
 		internal const string NearbyCraftingForkedGuid = "com.sonicdm.valheim.nearbycraftingforked";
 

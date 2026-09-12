@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.2
+
+- Fix item tooltips not showing. Filter focus no longer uses Jötunn `BlockInput` (that made the game think a text dialog was open), and hidden slots no longer disable tooltip components.
+
 ## 1.0.1
 
 - Item locate is now the single `locate` command (`locate Resin`, `locate` for the held item, `locate clear`). `find` / `finditem` are removed so they do not shadow vanilla `find`.

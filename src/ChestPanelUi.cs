@@ -24,9 +24,7 @@ namespace SonicChestFilters
 
 		private static bool _expanded;
 
-		private static bool _inputBlocked;
-
-		private static bool FilterFieldFocused =>
+		internal static bool FilterFieldFocused =>
 			(Object)(object)_filterInput != (Object)null && _filterInput.isFocused;
 
 		internal static void EnsureControls(InventoryGui gui)
@@ -71,7 +69,6 @@ namespace SonicChestFilters
 
 		internal static void Tick()
 		{
-			SyncInputBlock(FilterFieldFocused);
 			SyncFilterField();
 		}
 
@@ -357,7 +354,6 @@ namespace SonicChestFilters
 
 		private static void DestroyWidgets()
 		{
-			SyncInputBlock(false);
 			_filterInput = null;
 			_clearButton = null;
 			_lastFilterText = string.Empty;
@@ -366,17 +362,6 @@ namespace SonicChestFilters
 				Object.Destroy(_root);
 				_root = null;
 			}
-		}
-
-		private static void SyncInputBlock(bool shouldBlock)
-		{
-			if (_inputBlocked == shouldBlock)
-			{
-				return;
-			}
-
-			GUIManager.BlockInput(shouldBlock);
-			_inputBlocked = shouldBlock;
 		}
 
 		private static void SyncFilterField()
@@ -489,6 +474,20 @@ namespace SonicChestFilters
 				return;
 			}
 			ChestFilter.ApplyToGrid(__instance, inventory);
+		}
+	}
+
+	[HarmonyPatch(typeof(Player), "TakeInput")]
+	internal static class Player_TakeInput_Patch
+	{
+		private static bool Prefix(ref bool __result)
+		{
+			if (!ChestPanelUi.FilterFieldFocused)
+			{
+				return true;
+			}
+			__result = false;
+			return false;
 		}
 	}
 }
